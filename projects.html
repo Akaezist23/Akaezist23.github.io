@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Krishna Sameer Ventrapragada</title>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Krishna Sameer</a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <div class="page-title">
+      <div class="kicker">projects</div>
+      <h1>Projects</h1>
+      <p class="lede">Mostly course projects that turned into things I kept working on after the deadline.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>MacroJava to MIPS compiler</h3>
+        <a class="project-link" href="https://github.com/Akaezist23/CS3300-codes">GitHub ↗</a>
+      </div>
+      <p>Designed and implemented a 6-phase compiler (lexing, parsing, type checking, IR generation, register allocation, code generation) translating MacroJava to MIPS assembly.</p>
+      <div class="tag-row">
+        <span class="tag">compilers</span>
+        <span class="tag">Java</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Multi-Client Chat Server</h3>
+        <a class="project-link" href="https://github.com/Akaezist23/networks-project">GitHub ↗</a>
+      </div>
+      <p>Developed a multi-client chat server in C using socket programming, supporting persistent chats, broadcasts, and private messaging with proper connection handling. Implemented and evaluated concurrent server architectures — process-based, thread-based, and select-based — to compare performance and scalability.</p>
+      <div class="tag-row">
+        <span class="tag">C</span>
+        <span class="tag">networking</span>
+        <span class="tag">concurrency</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Universal Constructions in OCaml</h3>
+        <a class="project-link" href="https://github.com/Akaezist23/cs6868-project">GitHub ↗</a>
+      </div>
+      <p>Collaborated on implementing lock-free and wait-free consensus objects in OCaml based on Herlihy's consensus hierarchy, as a course project in Concurrent Programming.</p>
+      <div class="tag-row">
+        <span class="tag">OCaml</span>
+        <span class="tag">concurrency</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Travelling Salesman Problem Heuristic</h3>
+        <a class="project-link" href="https://github.com/123shivanshukumar/Travelling-Salesman-Problem">GitHub ↗</a>
+      </div>
+      <p>Collaborated on a group project to develop a heuristic for the Travelling Salesman Problem on 40 points, as part of the Deputy Coordinator tenure in the Mathematics Club. Conceived and implemented the heuristic in Python using a greedy approach based on distance and slope-optimization to construct an efficient tour.</p>
+      <div class="tag-row">
+        <span class="tag">Python</span>
+        <span class="tag">algorithms</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Krishna Sameer Ventrapragada</span>
+    <span>Built with plain HTML &amp; CSS</span>
+  </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
