@@ -464,7 +464,6 @@ let queue = [];
 let current = null;
 let asked = 0;
 let correct = 0;
-let checked = false;
 
 const $ = (id) => document.getElementById(id);
 
@@ -501,7 +500,6 @@ function startQuiz() {
   queue = shuffle(vocab);
   asked = 0;
   correct = 0;
-  checked = false;
   $("finished").hidden = true;
   $("quiz-card").hidden = false;
   nextQuestion();
@@ -527,29 +525,25 @@ function nextQuestion() {
 }
 
 function checkAnswer() {
-  if (checked) {
-    asked++;
-    nextQuestion();
-    return;
-  }
-
   const answer = normalizePinyin($("answer").value);
   const expected = normalizePinyin(current.pinyin);
 
   if (!answer) return;
 
-  checked = true;
   if (answer === expected) {
     correct++;
-    $("feedback").textContent = "Correct";
-    $("feedback").className = "feedback correct";
+    asked++;
+    nextQuestion();
   } else {
     $("feedback").textContent = `Incorrect · ${current.pinyin}`;
     $("feedback").className = "feedback wrong";
-  }
+    $("progress").textContent = `${asked + 1} / ${queue.length}`;
 
-  $("progress").textContent = `${asked + 1} / ${queue.length}`;
-  $("answer").focus();
+    setTimeout(() => {
+      asked++;
+      nextQuestion();
+    }, 500);
+  }
 }
 
 function renderVocab() {
