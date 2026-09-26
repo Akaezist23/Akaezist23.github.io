@@ -139,7 +139,7 @@ const DEFAULT_VOCAB = [
   ],
   [
     "期",
-    "qi1"
+    "qi2"
   ],
   [
     "昨",
