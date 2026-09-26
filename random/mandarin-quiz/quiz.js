@@ -549,7 +549,7 @@ function checkAnswer() {
     setTimeout(() => {
       asked++;
       nextQuestion();
-    }, 500);
+    }, 2000);
   }
 }
 
