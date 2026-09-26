@@ -1,0 +1,114 @@
+/* Mandarin quiz */
+.quiz-section { margin-top: 12px; }
+.quiz-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+#progress, .count {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+.quiz-card {
+  border: 1px solid var(--border);
+  padding: 42px 28px 30px;
+  text-align: center;
+}
+.quiz-character {
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 18vw, 8rem);
+  line-height: 1;
+  margin-bottom: 34px;
+}
+#answer-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.answer-input, .vocab-form input {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  padding: 9px 12px;
+  font: inherit;
+}
+.answer-input:focus, .vocab-form input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.feedback {
+  min-height: 28px;
+  margin-top: 18px;
+  color: var(--text-secondary);
+}
+.feedback.correct { color: #28733f; }
+.feedback.wrong { color: var(--accent); }
+.finished {
+  border: 1px solid var(--border);
+  padding: 30px 28px;
+  text-align: center;
+}
+.finished h2 { margin-top: 0; }
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.section-heading h2 { margin-bottom: 0; }
+.vocab-form {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 10px;
+  margin-top: 22px;
+}
+.help {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  margin-top: 10px;
+}
+.vocab-list { margin-top: 24px; }
+.vocab-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.vocab-char {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+}
+.vocab-pinyin { font-family: var(--font-mono); color: var(--text-secondary); }
+.vocab-delete {
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+}
+.vocab-delete:hover { color: var(--accent); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 640px) {
+  #answer-form { flex-direction: column; }
+  .vocab-form { grid-template-columns: 1fr; }
+  .vocab-row { grid-template-columns: 48px 1fr auto; }
+}
