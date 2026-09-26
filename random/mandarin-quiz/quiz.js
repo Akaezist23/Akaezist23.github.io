@@ -466,6 +466,7 @@ let asked = 0;
 let correct = 0;
 
 const $ = (id) => document.getElementById(id);
+$("quiz-count").max = vocab.length;
 
 function loadVocab() {
   try {
@@ -497,7 +498,13 @@ function shuffle(array) {
 }
 
 function startQuiz() {
-  queue = shuffle(vocab);
+  const count = Number($("quiz-count").value);
+
+  if (count < 1 || count > vocab.length) {
+    return;
+  }
+
+  queue = shuffle(vocab).slice(0, count);
   asked = 0;
   correct = 0;
   $("finished").hidden = true;

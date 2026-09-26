@@ -54,6 +54,10 @@
         <span id="progress">0 / 0</span>
         <button id="restart-btn" class="btn" type="button">Restart</button>
       </div>
+      <div class="quiz-settings">
+        <label for="quiz-count">Number of characters:</label>
+        <input id="quiz-count" type="number" min="1" value="20">
+      </div>
 
       <div id="quiz-card" class="quiz-card">
         <div id="character" class="quiz-character">你</div>
@@ -76,7 +80,10 @@
 
     <hr class="divider">
 
-    <section class="vocab-section">
+    <details class="vocab-section">
+      <summary>Vocabulary</summary>
+
+      <section class="vocab-section">
       <div class="section-heading">
         <div>
           <div class="kicker">vocabulary</div>
@@ -97,6 +104,9 @@
 
       <div id="vocab-list" class="vocab-list"></div>
     </section>
+
+    </details>
+    
   </div>
 </main>
 
