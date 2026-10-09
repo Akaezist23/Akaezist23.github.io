@@ -62,6 +62,7 @@
   { "character": "田", "pinyin": "tian2" },
   { "character": "誠", "pinyin": "cheng2" },
   { "character": "誰", "pinyin": "shei2" },
+  { "character": "題", "pinyin": "ti2" },
 
   { "character": "好", "pinyin": "hao3" },
   { "character": "你", "pinyin": "ni3" },
@@ -91,6 +92,7 @@
   { "character": "餅", "pinyin": "bing3" },
   { "character": "烤", "pinyin": "kao3" },
   { "character": "幾", "pinyin": "ji3" },
+  { "character": "老", "pinyin": "lao3" },
 
   { "character": "謝", "pinyin": "xie4" },
   { "character": "再", "pinyin": "zai4" },
@@ -137,6 +139,7 @@
   { "character": "看", "pinyin": "kan4" },
   { "character": "照", "pinyin": "zhao4" },
   { "character": "相", "pinyin": "xiang4" },
+  { "character": "代", "pinyin": "dai4" },
 
   { "character": "嗎", "pinyin": "ma0" },
   { "character": "了", "pinyin": "le0" },
