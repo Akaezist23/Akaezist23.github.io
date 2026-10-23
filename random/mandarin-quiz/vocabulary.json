@@ -159,6 +159,7 @@
   { "character": "漂", "pinyin": "piao4" },
   { "character": "亮", "pinyin": "liang4" },
   { "character": "次", "pinyin": "ci4" },
+  { "character": "字", "pinyin": "zi4" },
 
   { "character": "嗎", "pinyin": "ma0" },
   { "character": "了", "pinyin": "le0" },
@@ -167,6 +168,5 @@
   { "character": "個", "pinyin": "ge0" },
   { "character": "們", "pinyin": "men0" },
   { "character": "麼", "pinyin": "me0" },
-  { "character": "呢", "pinyin": "ne0" },
-  { "character": "字", "pinyin": "zi0" }
+  { "character": "呢", "pinyin": "ne0" }
 ]
