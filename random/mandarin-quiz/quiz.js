@@ -127,7 +127,7 @@ function checkAnswer() {
       missed.push(current);
     }
 
-    $("feedback").textContent = `Incorrect · ${current.pinyin}`;
+    $("feedback").textContent = `Incorrect · ${toToneMarks(current.pinyin)}`;
     $("feedback").className = "feedback wrong";
     $("progress").textContent = `${asked + 1} / ${queue.length}`;
 
@@ -176,7 +176,7 @@ function renderVocab() {
 
     const pinyin = document.createElement("span");
     pinyin.className = "vocab-pinyin";
-    pinyin.textContent = item.pinyin;
+    pinyin.textContent = toToneMarks(item.pinyin);
 
     row.append(char, pinyin);
     list.appendChild(row);
