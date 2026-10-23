@@ -17,6 +17,7 @@ async function loadVocab() {
     vocab = await response.json();
 
     $("quiz-count").max = vocab.length;
+    $("quiz-max").textContent = `(max ${vocab.length})`;
     $("quiz-count").value = Math.min(20, vocab.length);
 
     renderVocab();
