@@ -3,6 +3,7 @@ let queue = [];
 let current = null;
 let asked = 0;
 let correct = 0;
+let missed = [];
 
 const $ = (id) => document.getElementById(id);
 
@@ -32,6 +33,33 @@ function normalizePinyin(value) {
   return value.trim().toLowerCase().replace(/\s+/g, "");
 }
 
+const TONE_MARKS = {
+  a: "āáǎà", e: "ēéěè", i: "īíǐì", o: "ōóǒò", u: "ūúǔù", "ü": "ǖǘǚǜ",
+};
+
+// "lv4" -> "lǜ", "me0" -> "me"
+function toToneMarks(pinyin) {
+  const syllable = pinyin.slice(0, -1).replace(/v/g, "ü");
+  const tone = Number(pinyin.slice(-1));
+
+  if (tone < 1 || tone > 4) {
+    return syllable;
+  }
+
+  let index = syllable.search(/[ae]/);
+  if (index === -1) index = syllable.indexOf("ou");
+  if (index === -1) {
+    const vowels = [...syllable.matchAll(/[iouü]/g)];
+    index = vowels.length ? vowels[vowels.length - 1].index : -1;
+  }
+  if (index === -1) {
+    return syllable;
+  }
+
+  const vowel = syllable[index];
+  return syllable.slice(0, index) + TONE_MARKS[vowel][tone - 1] + syllable.slice(index + 1);
+}
+
 function shuffle(array) {
   const copy = [...array];
 
@@ -53,6 +81,7 @@ function startQuiz() {
   queue = shuffle(vocab).slice(0, count);
   asked = 0;
   correct = 0;
+  missed = [];
 
   $("finished").hidden = true;
   $("quiz-card").hidden = false;
@@ -66,6 +95,7 @@ function nextQuestion() {
     $("finished").hidden = false;
     $("score").textContent = `You got ${correct} / ${queue.length} correct.`;
     $("progress").textContent = `${queue.length} / ${queue.length}`;
+    renderMissed();
     return;
   }
 
@@ -93,6 +123,10 @@ function checkAnswer() {
     asked++;
     nextQuestion();
   } else {
+    if (!missed.includes(current)) {
+      missed.push(current);
+    }
+
     $("feedback").textContent = `Incorrect · ${current.pinyin}`;
     $("feedback").className = "feedback wrong";
     $("progress").textContent = `${asked + 1} / ${queue.length}`;
@@ -102,6 +136,28 @@ function checkAnswer() {
       nextQuestion();
     }, 2000);
   }
+}
+
+function renderMissed() {
+  const list = $("missed-list");
+  list.innerHTML = "";
+  $("missed").hidden = missed.length === 0;
+
+  missed.forEach((item) => {
+    const row = document.createElement("div");
+    row.className = "vocab-row";
+
+    const char = document.createElement("span");
+    char.className = "vocab-char";
+    char.textContent = item.character;
+
+    const pinyin = document.createElement("span");
+    pinyin.className = "vocab-pinyin";
+    pinyin.textContent = toToneMarks(item.pinyin);
+
+    row.append(char, pinyin);
+    list.appendChild(row);
+  });
 }
 
 function renderVocab() {
