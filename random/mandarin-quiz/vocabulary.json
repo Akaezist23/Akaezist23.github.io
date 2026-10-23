@@ -31,6 +31,11 @@
   { "character": "君", "pinyin": "jun1" },
   { "character": "安", "pinyin": "an1" },
   { "character": "哥", "pinyin": "ge1" },
+  { "character": "多", "pinyin": "duo1" },
+  { "character": "都", "pinyin": "dou1" },
+  { "character": "兄", "pinyin": "xiong1" },
+  { "character": "阿", "pinyin": "a1" },
+  { "character": "書", "pinyin": "shu1" },
 
   { "character": "沒", "pinyin": "mei2" },
   { "character": "還", "pinyin": "hai2" },
@@ -63,6 +68,12 @@
   { "character": "誠", "pinyin": "cheng2" },
   { "character": "誰", "pinyin": "shei2" },
   { "character": "題", "pinyin": "ti2" },
+  { "character": "伯", "pinyin": "bo2" },
+  { "character": "叔", "pinyin": "shu2" },
+  { "character": "姨", "pinyin": "yi2" },
+  { "character": "名", "pinyin": "ming2" },
+  { "character": "朋", "pinyin": "peng2" },
+  { "character": "男", "pinyin": "nan2" },
 
   { "character": "好", "pinyin": "hao3" },
   { "character": "你", "pinyin": "ni3" },
@@ -93,6 +104,10 @@
   { "character": "烤", "pinyin": "kao3" },
   { "character": "幾", "pinyin": "ji3" },
   { "character": "老", "pinyin": "lao3" },
+  { "character": "兩", "pinyin": "liang3" },
+  { "character": "友", "pinyin": "you3" },
+  { "character": "女", "pinyin": "nv3" },
+  { "character": "母", "pinyin": "mu3" },
 
   { "character": "謝", "pinyin": "xie4" },
   { "character": "再", "pinyin": "zai4" },
@@ -140,6 +155,10 @@
   { "character": "照", "pinyin": "zhao4" },
   { "character": "相", "pinyin": "xiang4" },
   { "character": "代", "pinyin": "dai4" },
+  { "character": "片", "pinyin": "pian4" },
+  { "character": "漂", "pinyin": "piao4" },
+  { "character": "亮", "pinyin": "liang4" },
+  { "character": "次", "pinyin": "ci4" },
 
   { "character": "嗎", "pinyin": "ma0" },
   { "character": "了", "pinyin": "le0" },
@@ -148,5 +167,6 @@
   { "character": "個", "pinyin": "ge0" },
   { "character": "們", "pinyin": "men0" },
   { "character": "麼", "pinyin": "me0" },
-  { "character": "呢", "pinyin": "ne0" }
+  { "character": "呢", "pinyin": "ne0" },
+  { "character": "字", "pinyin": "zi0" }
 ]
