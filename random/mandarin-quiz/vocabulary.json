@@ -36,6 +36,7 @@
   { "character": "兄", "pinyin": "xiong1" },
   { "character": "阿", "pinyin": "a1" },
   { "character": "書", "pinyin": "shu1" },
+  { "character": "說", "pinyin": "shuo1" },
 
   { "character": "沒", "pinyin": "mei2" },
   { "character": "還", "pinyin": "hai2" },
@@ -74,6 +75,7 @@
   { "character": "名", "pinyin": "ming2" },
   { "character": "朋", "pinyin": "peng2" },
   { "character": "男", "pinyin": "nan2" },
+  { "character": "球", "pinyin": "qiu2" },
 
   { "character": "好", "pinyin": "hao3" },
   { "character": "你", "pinyin": "ni3" },
@@ -108,6 +110,7 @@
   { "character": "友", "pinyin": "you3" },
   { "character": "女", "pinyin": "nv3" },
   { "character": "母", "pinyin": "mu3" },
+  { "character": "打", "pinyin": "da3" },
 
   { "character": "謝", "pinyin": "xie4" },
   { "character": "再", "pinyin": "zai4" },
@@ -160,6 +163,7 @@
   { "character": "亮", "pinyin": "liang4" },
   { "character": "次", "pinyin": "ci4" },
   { "character": "字", "pinyin": "zi4" },
+  { "character": "太", "pinyin": "tai4" }
 
   { "character": "嗎", "pinyin": "ma0" },
   { "character": "了", "pinyin": "le0" },
