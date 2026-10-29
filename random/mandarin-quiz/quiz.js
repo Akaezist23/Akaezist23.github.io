@@ -4,6 +4,8 @@ let current = null;
 let asked = 0;
 let correct = 0;
 let missed = [];
+let total = 0;
+let waiting = false;
 
 const $ = (id) => document.getElementById(id);
 
@@ -79,9 +81,11 @@ function startQuiz() {
   }
 
   queue = shuffle(vocab).slice(0, count);
+  total = count;
   asked = 0;
   correct = 0;
   missed = [];
+  waiting = false;
 
   $("finished").hidden = true;
   $("quiz-card").hidden = false;
@@ -93,7 +97,7 @@ function nextQuestion() {
   if (asked >= queue.length) {
     $("quiz-card").hidden = true;
     $("finished").hidden = false;
-    $("score").textContent = `You got ${correct} / ${queue.length} correct.`;
+    $("score").textContent = `You got ${correct} / ${total} correct on the first try.`;
     $("progress").textContent = `${queue.length} / ${queue.length}`;
     renderMissed();
     return;
@@ -114,12 +118,14 @@ function checkAnswer() {
   const answer = normalizePinyin($("answer").value);
   const expected = normalizePinyin(current.pinyin);
 
-  if (!answer) {
+  if (!answer || waiting) {
     return;
   }
 
   if (answer === expected) {
-    correct++;
+    if (!missed.includes(current)) {
+      correct++;
+    }
     asked++;
     nextQuestion();
   } else {
@@ -127,11 +133,16 @@ function checkAnswer() {
       missed.push(current);
     }
 
+    // Re-ask it at the end of the queue
+    queue.push(current);
+    waiting = true;
+
     $("feedback").textContent = `Incorrect · ${toToneMarks(current.pinyin)}`;
     $("feedback").className = "feedback wrong";
     $("progress").textContent = `${asked + 1} / ${queue.length}`;
 
     setTimeout(() => {
+      waiting = false;
       asked++;
       nextQuestion();
     }, 2000);
