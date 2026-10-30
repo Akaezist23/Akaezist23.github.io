@@ -391,6 +391,13 @@ footer .wrap {
   .entry, .project { break-inside: avoid; }
 }
 
+/* Shown only in the printed / saved-PDF resume */
+.print-only { display: none; }
+@media print {
+  .print-only { display: block; }
+  span.print-only { display: inline; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
